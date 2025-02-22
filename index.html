@@ -187,10 +187,9 @@
       <img src="static/images/main_1.jpg" alt="" />
     </figure>
     <p class="has-text-centered">
-      <strong>Takeaway 1: Long CoT Gap</strong> 
-      <br>
-      <em>Small student models tend to benefit more from short CoT, while large student models gain greater advantages from long CoT.</em> 
+      <strong>Takeaway 1: Long CoT Gap. Small student models tend to benefit more from short CoT, while large student models gain greater advantages from long CoT.</strong> 
     </p>
+    <br>
     <p>
         Long CoT Gap (<span>&Delta;<sub>Long</sub>=P<sub>Long</sub> - P<sub>Short</sub></span>) of student models with different model sizes for (a) Qwen family (b) Llama family. For teacher models, <code>QwQ-32B-Preview</code> is chosen to generate long CoT responses, while <code>Qwen2.5-32B-Instruct</code> is chosen to generate short CoT responses. Negative (Positive) <span>&Delta;<sub>Long</sub></span> indicates that long CoT is worse (better) than short CoT. Our results demonstrate that short CoT is better for smaller student models (indicated by <span>&Delta;<sub>Long</sub></span> &lt; 0), while long CoT is better for larger student models (indicated by <span>&Delta;<sub>Long</sub></span> &gt; 0).
       </p>
@@ -200,10 +199,9 @@
       <img src="static/images/main_2.jpg" alt="" />
     </figure>
     <p class="has-text-centered">
-      <strong>Takeaway 2: Large Teacher CoT Gap</strong> 
-      <br>
-      <em>Small student models tend to learn better from small teachers, while large student models benefit more from large teachers.</em>
+      <strong>Takeaway 2: Large Teacher CoT Gap. Small student models tend to learn better from small teachers, while large student models benefit more from large teachers.</strong>
     </p>
+    <br>
     <p>
       Large model CoT Gap (<span>&Delta;<sub>Large</sub>=P<sub>Large</sub> - P<sub>Small</sub></span>) of student models with different models sizes for (a) Qwen family (b) Llama family. For teacher models, <code>Qwen2.5-72B-Instruct</code> is chosen as the large teacher to generate responses, while <code>Qwen2.5-3B-Instruct</code> is chosen as the small teacher to generate responses. Negative (positive) <span>&Delta;<sub>Large</sub></span> indicates that large teacher CoT is worse (better) than small teacher CoT. Our results demonstrate that small teacher CoT is better for smaller student models (indicated by <span>&Delta;<sub>Large</sub></span> &lt; 0), while large model CoT is better for larger student models (indicated by <span>&Delta;<sub>Large</sub></span> &gt; 0).
     </p>
@@ -212,10 +210,9 @@
       <img src="static/images/math_expert.jpg" style="width: 60%; margin: 0 auto;" alt="" />
     </figure>
     <p class="has-text-centered">
-      <strong>Takeaway 3: Effect of Domain Knowledge</strong> 
-      <br>
-      <em>Limited domain knowledge of small models may hinder their learning from strong reasoning teachers.</em>
+      <strong>Takeaway 3: Effect of Domain Knowledge. Limited domain knowledge of small models may hinder their learning from strong reasoning teachers.</strong>
     </p>
+    <br>
     <p>
       Math expert models usually have a less significant Learnability Gap than the general models. This indicates that the math expert model could more easily learn from long CoT data or large teacher CoT.
     </p>
@@ -225,10 +222,10 @@
       <img src="static/images/base_vs_instruct.jpg" alt="" />
     </figure>
     <p class="has-text-left">
-      <strong>Takeaway 4: Base vs Instruct</strong> 
-      <br>
-      <em>Small base models experience more significant learnability gap than Instruct models.</em>
-      <br>
+      <strong>Takeaway 4: Base vs Instruct. Small base models experience more significant learnability gap than Instruct models.</strong> 
+    </p>
+    <br>
+    <p>
       Base models generally exhibit a more significant learnability gap than Instruct models. This implies that it is more challenging for small base models to effectively learn from long CoT data or large teacher CoT.
 
     </p>
