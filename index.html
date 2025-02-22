@@ -94,16 +94,14 @@
                       </a>
                     </span>
 
-                    <!-- Supplementary PDF link -->
                     <span class="link-block">
-                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
+                      <a href="https://huggingface.co/UWNSL" target="_blank"
                       class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="fas fa-file-pdf"></i>
-                      </span>
-                      <span>Supplementary</span>
+                      <span class="icon" role="img" aria-label="hugging face">🤗</span>
+                      <span>Huggingface</span>
                     </a>
                   </span>
+
 
                   <!-- Github link -->
                   <span class="link-block">
@@ -135,22 +133,7 @@
 </section>
 
 
-<!-- Teaser video-->
-<!-- <section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video poster="" id="tree" autoplay controls muted loop height="100%">
-        <!-- Your video here -->
-        <source src="static/videos/banner_video.mp4"
-        type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
-      </h2>
-    </div>
-  </div>
-</section> -->
-<!-- End teaser video -->
+
 
 <!-- Paper abstract -->
 <section class="section hero is-light">
@@ -160,7 +143,11 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
+            Large language models (LLMs) excel in complex reasoning tasks, and distilling their reasoning capabilities into smaller models has shown promise. However, we uncover an interesting phenomenon, which we term the \textit{Small Model Learnability Gap}: small models ($\leq$3B parameters) do not consistently benefit from long chain-of-thought (CoT) reasoning or distillation from larger models. Instead, they perform better when fine-tuned on shorter, simpler reasoning chains that better align with their intrinsic learning capacity.
+            <p> 
+            <p>
+            To address this, we propose Mix Distillation, a simple yet effective strategy that balances reasoning complexity by combining long and short CoT examples or reasoning from both larger and smaller models. Our experiments demonstrate that Mix Distillation significantly improves small model reasoning performance compared to training on either data alone. These findings highlight the limitations of direct strong model distillation and underscore the importance of adapting reasoning complexity for effective reasoning capability transfer.
+            </p>
           </p>
         </div>
       </div>
@@ -169,142 +156,211 @@
 </section>
 <!-- End paper abstract -->
 
-
-<!-- Image carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          First image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
-    </div>
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Optional section title -->
+    <!-- <div class="has-text-centered">
+    <h2 class="title is-3">Your Section Title</h2>
+    </div> -->
+    <br>
+    <!-- Figure on top -->
+    <figure class="image">
+      <img src="static/images/teaser.jpg" alt="" />
+    </figure>
+    <p class="has-text-left">
+      Small student models (\<=3B parameters) do not consistently benefit from long CoT reasoning or distillation from large teacher models. Instead, they perform better when fine-tuned on shorter CoT reasoning or distilled from smaller teachers, which better matches their intrinsic learning capacity. We term this phenomenon the <em>Small Model Learnability Gap</em>.
+    </p>
   </div>
-</div>
-</div>
 </section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Optional section title -->
+    <div class="has-text-centered">
+    <h2 class="title is-3"></h2>
+    </div>
+    <br>
+    <!-- Figure on top -->
+    
+    <figure class="image"  style="width: 40%; margin: 0 auto;">
+      <img src="static/images/main_1.jpg" alt="" />
+    </figure>
+    <p class="has-text-left">
+      Long CoT Gap ($\Delta_{Long}=P_{Long} - P_{Short}$) of student models with different models sizes for (a) Qwen family (b) Llama family. For teacher models, \texttt{QwQ-32B-Preview} is chosen to generate long CoT responses, while \texttt{Qwen2.5-32B-Instruct} is chosen to generate short CoT responses. Negative (Positive) $\Delta_{Long}$ indicates that long CoT is worse (better) than short CoT. Our results demonstrate that short CoT is better for smaller student models (indicated by $\Delta_{Long}$ < 0), while long CoT is better for larger student models (indicated by $\Delta_{Long}$ > 0).
+        <!-- This table summarizes the 
+        <span style="font-variant: small-caps;">Acc</span>,
+        <span style="font-variant: small-caps;">F-1</span>,
+        and
+        <span style="font-variant: small-caps;">PCC</span>
+        of evaluators RS-Match, OpenAIMod, HarmBenchEval, and Llama-Guard.
+        Among all evaluators, we observe Llama-Guard exhibit robust performance 
+        across all metrics when evaluating the safety of reasoning models. -->
+      </p>
+    
+    
+    <!-- Text below the figure -->
+    <!-- <div class="content has-text-justified">
+      <p>
+        Here is some text below the figure. You can describe what’s 
+        happening in the figure, give results, or continue with 
+        your discussion. Bulma’s <code>.content</code> class 
+        automatically applies nice formatting to paragraphs, lists, and more.
+      </p>
+    </div> -->
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Optional section title -->
+    <div class="has-text-centered">
+    <h2 class="title is-3">Overall Evaluation</h2>
+    </div>
+    <br>
+    <!-- Figure on top -->
+    
+    <figure class="image">
+      <img src="static/images/overall_eval.png" alt="" />
+    </figure>
+    <p class="has-text-centered">
+      This table presents the safety performance of all LRMs evaluated using Safe@1, Safe@K, and ConsSafe@K (refer to Section 3.2.)
+    </p>
+    <br>
+
+    <figure class="image">
+      <img src="static/images/pairwise_eval.jpg" style="width: 60%; margin: 0 auto;" alt="" />
+    </figure>
+    <p class="has-text-left">
+      We compare the safety of R1-70B with its pre-trained model Llama-3.3-70B-Instruct, as well as the corresponding base model Llama-3.1-70B. We note that only 32.3% of responses by R1-70B is considered safe, implying that fine-tuning with long CoT does not necessarily enhance safety performance.
+    </p>
+    <br
+    <figure class="image">
+      <img src="static/images/varying_tpk.jpg" alt="" />
+    </figure>
+    <p class="has-text-left">
+      This figure shows how Safe@1 and Safe@K of R1-7B and R1-8B vary as decoding configuration (temperature, p value for top-p, and k value for top-k) change. We observe that the safety of LRMs degrades as temperature increases.
+    </p>
+    
+
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Optional section title -->
+    <div class="has-text-centered">
+    <h2 class="title is-3">Different Thinking</h2>
+    </div>
+    <br>
+    <!-- Figure on top -->
+    
+    <figure class="image">
+      <img src="static/images/different_think_example.png" style="width: 80%; margin: 0 auto;" alt="" />
+    </figure>
+    <p class="has-text-left">
+      
+        Texts in
+        <span style="background-color: #eee;">grey</span>
+        <span style="background-color: #fff3e0;">orange</span>,
+        <span style="background-color: #d9f2d9;">green</span>
+        boxes are instructions, Chain-of-Thoughts and answers respectively.
+        Text in
+        <span style="color: red;">red</span>
+        are enforced replacement text for
+        <span style="font-variant: small-caps;">MoreThink</span>
+        to substitute the end of thinking tag (i.e.,
+        <code>&lt;/think&gt;</code>).
+        For <em>i</em><sup>th</sup> output in
+        <span style="font-variant: small-caps;">MoreThink</span>,
+        the input context is { input, output 1, &#8230;, output <em>i</em>-1 }.
+      
+    </p>
+    <br>
+    <figure class="image">
+      <img src="static/images/different_think.png"  alt="" />
+    </figure>
+    <p class="has-text-left">
+      This tables shows the safety performances of R1 models under default, ZeroThink, LessThink, and MoreThink thinking setups. We observe that length of thought process affects safety. All thinking strategies yield enhanced safety performance than the default setup.
+    </p>
+    
+    <!-- Text below the figure -->
+    <!-- <div class="content has-text-justified">
+      <p>
+        Here is some text below the figure. You can describe what’s 
+        happening in the figure, give results, or continue with 
+        your discussion. Bulma’s <code>.content</code> class 
+        automatically applies nice formatting to paragraphs, lists, and more.
+      </p>
+    </div> -->
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Optional section title -->
+    <div class="has-text-centered">
+    <h2 class="title is-3">SafeChain</h2>
+    </div>
+    <br>
+    <!-- Figure on top -->
+    
+    <figure class="image">
+      <img src="static/images/safechain_train.png"  alt="" />
+    </figure>
+    <p class="has-text-left">
+      This table summarizes the math, coding, and safety performance of R1-7B and R1-8B fine-tuned with different datasets. We observe that SafeChain improves models' safety performance while preserves their math and coding performance across all benchmarks.
+    </p>
+    
+    <!-- Text below the figure -->
+    <!-- <div class="content has-text-justified">
+      <p>
+        Here is some text below the figure. You can describe what’s 
+        happening in the figure, give results, or continue with 
+        your discussion. Bulma’s <code>.content</code> class 
+        automatically applies nice formatting to paragraphs, lists, and more.
+      </p>
+    </div> -->
+  </div>
+</section>
+
 <!-- End image carousel -->
 
 
 
 
-<!-- Youtube video -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <!-- Paper video. -->
-      <h2 class="title is-3">Video Presentation</h2>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          
-          <div class="publication-video">
-            <!-- Youtube embed code here -->
-            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End youtube video -->
-
-
-<!-- Video carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
-          <video poster="" id="video1" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel1.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video2">
-          <video poster="" id="video2" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel2.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video3">
-          <video poster="" id="video3" autoplay controls muted loop height="100%">\
-            <!-- Your video file here -->
-            <source src="static/videos/carousel3.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End video carousel -->
-
-
-
-
-
-
-<!-- Paper poster -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title">Poster</h2>
-
-      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
-          </iframe>
-        
-      </div>
-    </div>
-  </section>
-<!--End paper poster -->
 
 
 <!--BibTex citation -->
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
-      <pre><code>BibTex Code Here</code></pre>
+      <p>
+        If you find our work useful, please consider citing our paper:
+      </p>
+      <pre><code>
+      @misc{li2025smallmodelsstrugglelearn,
+        title={Small Models Struggle to Learn from Strong Reasoners}, 
+        author={Yuetai Li and Xiang Yue and Zhangchen Xu and Fengqing Jiang and Luyao Niu and Bill Yuchen Lin and Bhaskar Ramasubramanian and Radha Poovendran},
+        year={2025},
+        eprint={2502.12143},
+        archivePrefix={arXiv},
+        primaryClass={cs.AI},
+        url={https://arxiv.org/abs/2502.12143}, 
+      }    
+    </code></pre>
     </div>
 </section>
 <!--End BibTex citation -->
 
-
-  <footer class="footer">
+<footer class="footer">
   <div class="container">
     <div class="columns is-centered">
       <div class="column is-8">
         <div class="content">
-
           <p>
             This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
             Commons Attribution-ShareAlike 4.0 International License</a>.
           </p>
 
