@@ -164,7 +164,7 @@
     </div> -->
     <br>
     <!-- Figure on top -->
-    <figure class="image">
+    <figure class="image" style="width: 60%; margin: 0 auto;">
       <img src="static/images/teaser.png" alt="" />
     </figure>
     <p class="has-text-left">
@@ -173,24 +173,6 @@
   </div>
 </section>
 
-<section class="section">
-  <div class="container is-max-desktop">
-    <!-- Optional section title -->
-    <div class="has-text-centered">
-    <h2 class="title is-3"></h2>
-    </div>
-    <br>
-    <!-- Figure on top -->
-    <figure class="image"  style="width: 40%; margin: 0 auto;">
-      <img src="static/images/main_1.jpg" alt="" />
-    </figure>
-    <p class="has-text-left">
-      Long CoT Gap ($\Delta_{Long}=P_{Long} - P_{Short}$) of student models with different models sizes for (a) Qwen family (b) Llama family. For teacher models, \texttt{QwQ-32B-Preview} is chosen to generate long CoT responses, while \texttt{Qwen2.5-32B-Instruct} is chosen to generate short CoT responses. Negative (Positive) $\Delta_{Long}$ indicates that long CoT is worse (better) than short CoT. Our results demonstrate that short CoT is better for smaller student models (indicated by $\Delta_{Long}$ \< 0), while long CoT is better for larger student models (indicated by $\Delta_{Long}$ > 0).
-      </p>
-    
-    
-  </div>
-</section>
 
 <section class="section">
   <div class="container is-max-desktop">
@@ -201,7 +183,7 @@
     <br>
     <!-- Figure on top -->
 
-    <figure class="image"  style="width: 40%; margin: 0 auto;">
+    <figure class="image">
       <img src="static/images/main_1.jpg" alt="" />
     </figure>
     <p class="has-text-centered">
@@ -235,16 +217,20 @@
       <em>Limited domain knowledge of small models may hinder their learning from strong reasoning teachers.</em>
     </p>
     <p>
-      Math expert models usually have a less significant Learnability Gap than the general models. 
-      A positive Gap means long CoT or large teacher CoT is better while negative means worse. This indicates that the math expert model could more easily learn from long CoT data or large teacher CoT.
+      Math expert models usually have a less significant Learnability Gap than the general models. This indicates that the math expert model could more easily learn from long CoT data or large teacher CoT.
     </p>
 
-    
+
     <figure class="image">
       <img src="static/images/base_vs_instruct.jpg" alt="" />
     </figure>
     <p class="has-text-left">
-      This figure shows how Safe@1 and Safe@K of R1-7B and R1-8B vary as decoding configuration (temperature, p value for top-p, and k value for top-k) change. We observe that the safety of LRMs degrades as temperature increases.
+      <strong>Takeaway 4: Base vs Instruct</strong> 
+      <br>
+      <em>Small base models experience more significant learnability gap than Instruct models.</em>
+      <br>
+      Base models generally exhibit a more significant learnability gap than Instruct models. This implies that it is more challenging for small base models to effectively learn from long CoT data or large teacher CoT.
+
     </p>
     
 
